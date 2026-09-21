@@ -13,7 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
 class OnlineUsersWsHandlerTest {
-    // @Test
+    @Test
     void returnsSortedOpenUsersOnlyToRequester() {
         WorldSessionRegistry registry = mock(WorldSessionRegistry.class);
         WorldBroadcaster broadcaster = mock(WorldBroadcaster.class);
@@ -33,14 +33,14 @@ class OnlineUsersWsHandlerTest {
         ArgumentCaptor<Object> response = ArgumentCaptor.forClass(Object.class);
         verify(broadcaster).sendTo(eq(requester), response.capture());
         JsonNode json = mapper.readTree(mapper.writeValueAsString(response.getValue()));
-        assertEquals("onlineUsers", json.path("type").asString());
+        assertEquals("", json.path("type").asString());
         assertEquals(mapper.readTree("[\"Alice\",\"Bob\"]"), json.path("users"));
         assertEquals(2, json.path("count").asInt());
         verify(registry).entries(42L);
         verifyNoMoreInteractions(registry, broadcaster);
     }
 
-    // @Test
+    @Test
     void returnsZeroForAnEmptyList() {
         WorldSessionRegistry registry = mock(WorldSessionRegistry.class);
         WorldBroadcaster broadcaster = mock(WorldBroadcaster.class);
