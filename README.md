@@ -263,10 +263,10 @@ Spring이 생성하여 Handler에 전달한다.
 
 ---
 ### Lv 15. 접속자 목록 조회
-1`type`이 `onlineUsers`일 때 Handler 처리
+1. `type`이 `onlineUsers`일 때 Handler 처리
 
 <img src="/images/lv15_OnlineUsersWsHandler.png" width="800">
 
-2`type`이 `onlineUsers`일 때 응답 DTO
+2. `type`이 `onlineUsers`일 때 응답 DTO
 
 <img src="/images/lv15_OnlineUsersResponse.png" width="800">
