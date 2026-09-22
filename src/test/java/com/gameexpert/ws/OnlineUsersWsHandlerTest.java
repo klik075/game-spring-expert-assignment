@@ -33,7 +33,7 @@ class OnlineUsersWsHandlerTest {
         ArgumentCaptor<Object> response = ArgumentCaptor.forClass(Object.class);
         verify(broadcaster).sendTo(eq(requester), response.capture());
         JsonNode json = mapper.readTree(mapper.writeValueAsString(response.getValue()));
-        assertEquals("", json.path("type").asString());
+        assertEquals("onlineUsers", json.path("type").asString());
         assertEquals(mapper.readTree("[\"Alice\",\"Bob\"]"), json.path("users"));
         assertEquals(2, json.path("count").asInt());
         verify(registry).entries(42L);

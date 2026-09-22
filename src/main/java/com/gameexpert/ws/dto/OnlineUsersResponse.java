@@ -7,7 +7,7 @@ import lombok.Getter;
 public class OnlineUsersResponse {
     private final List<String> users;
     private final int count;
-
+    private final String type = "onlineUsers";
     // TODO Lv 15: API 명세에 맞게 응답 필드와 생성자를 완성합니다.
     public OnlineUsersResponse(List<String> users, int count) {
         this.users = users;
