@@ -36,7 +36,7 @@
 
 <img src="/images/ERD_worlds.png" width="800">
 
-3. chat_Messages : worlds
+3. chat_messages : worlds
 
 <img src="/images/ERD_chatMessages_worlds.png" width="800">
 
