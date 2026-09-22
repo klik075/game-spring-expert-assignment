@@ -5,7 +5,19 @@
 
 프로젝트 기간 : 2026.9.21(월) ~ 2026.9.22(화) 총 2일
 
-## 1. API 명세
+## 1. 기술 스택
+| 카테고리                 | 기술                       |
+|--------------------------|----------------------------|
+| **Language**             | Java 21                    |
+| **Framework**            | Spring Boot 4.1.0          |
+| **Web**                  | Spring MVC, WebSocket      |
+| **ORM**                  | Spring Data JPA, Hibernate |
+| **Infrastructure**       | Docker                     |
+| **Database**             | MySQL 8.4                  |
+| **In-Memory Data Store** | Redis 7                    |
+
+
+## 2. API 명세
 
 | 메소드 | 경로                        | 성공 | 하는 일          |
 |--------|-----------------------------|-----:|------------------|
@@ -15,7 +27,7 @@
 | GET    | `/worlds/{worldId}/chats`   |  200 | 최근 채팅 조회   |
 | WS     | `/ws/worlds/{worldId}`      |  101 | WebSocket 연결   |
 
-## 2. 오류 응답
+## 3. 오류 응답
 | 에러                          |  상태 | 언제                                                   |
 |-------------------------------|------:|--------------------------------------------------------|
 | `VALIDATION_FAILED`           | `400` | 필수 값 누락, 길이·패턴 위반 또는 잘못된 숫자 파라미터 |
@@ -27,7 +39,7 @@
 | `INTERNAL_ERROR`              | `500` | 예기치 못한 서버 오류                                  |
 | `WORLD_BASELINE_INITIALIZING` | `503` | 서버 기동 직후 월드 준비가 끝나기 전                   |
 
-## 3. ERD
+## 4. ERD
 1. players
 
 <img src="/images/ERD_players.png" width="800">
@@ -41,7 +53,7 @@
 <img src="/images/ERD_chatMessages_worlds.png" width="800">
 
 ---
-## 4. 미션 (Lv 1 ~ 15)
+## 5. 미션 (Lv 1 ~ 15)
 ### Lv 1. Docker로 MySQL과 Redis 설정
 1. application.properties 작성
 
